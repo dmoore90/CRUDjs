@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>INDEX</title>
+</head>
+<body>
+	<h1>Index</h1>
+  	<form action="/" method="POST">
+    	<input id="content" type="text" name="content">  	
+    	<input type="submit" value="submit">
+	</form>
+	<% if (posts.length > 0) { %>
+		<% for (let post of posts) { %>
+			<ul><a href="/pages/update_page/<%= post.id %>"><%= post.content %></a></ul>
+		<% } %>
+	<% } %>
+</body>
+</html>
