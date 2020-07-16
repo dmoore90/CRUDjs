@@ -4,9 +4,10 @@
 	<title>INDEX</title>
 </head>
 <body>
-	<h1>Index</h1>
+	<h1>Update Post</h1>
 	<form action="/pages/update_page" method="POST">
-		<input value="<%= post.content %>" name="postId">
+		<input type="text" value="<%= post.content %>" id="content" name="content">
+		<input type="hidden" value="<%= post.id %>" name="postId">
 		<input type="submit">
 	</form>
 </body>

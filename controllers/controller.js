@@ -37,9 +37,22 @@ exports.getUpdatePage = (req, res, next) => {
 	.catch(err => console.log(err));
 }
 
-// exports.getUpdatePage = (req, res) => {
-// 	res.render('pages/update_page.ejs')
-// }
+exports.postUpdatePage = (req, res, next) => {
+	const posId = req.body.postId;
+	console.log(posId);
+	const updatedCont = req.body.content;
+	Post.findByPk(posId)
+		.then(post => {
+			post.content = updatedCont;
+			return post.save();
+		})
+		.then(result => {
+			console.log('Updated Content');
+			res.redirect('/');
+		})
+		.catch(err => console.log(err));
+}
+
 exports.getTest = (req, res) => {
 	res.render('pages/test.ejs');
 }
