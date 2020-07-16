@@ -7,6 +7,5 @@ router.post('/', controller.postIndex);
 router.get('/pages/update_page/:postId', controller.getUpdatePage);
 router.post('/pages/update_page', controller.postUpdatePage);
 router.post('/pages/delete_post', controller.postDeletePost);
-router.get('/pages/test', controller.getTest);
 
 module.exports = router;

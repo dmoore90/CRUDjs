@@ -63,7 +63,3 @@ exports.postDeletePost = (req, res, next) => {
 		})
 		.catch(err => console.log(err));
 }
-
-exports.getTest = (req, res) => {
-	res.render('pages/test.ejs');
-}
