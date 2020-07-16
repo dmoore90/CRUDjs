@@ -10,5 +10,10 @@
 		<input type="hidden" value="<%= post.id %>" name="postId">
 		<input type="submit">
 	</form>
+	<form action="/pages/delete_post" method="POST">
+		<input type="hidden" value="<%= post.id %>" name="postId">
+		<button class="btn" type="submit">delete</button>
+	</form>
+
 </body>
 </html>

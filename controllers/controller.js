@@ -53,6 +53,17 @@ exports.postUpdatePage = (req, res, next) => {
 		.catch(err => console.log(err));
 }
 
+exports.postDeletePost = (req, res, next) => {
+	const posId = req.body.postId;
+	console.log(posId);
+	Post.destroy({ where: { id: posId }})
+		.then(result => {
+			console.log('content deleted');
+			res.redirect('/');
+		})
+		.catch(err => console.log(err));
+}
+
 exports.getTest = (req, res) => {
 	res.render('pages/test.ejs');
 }
