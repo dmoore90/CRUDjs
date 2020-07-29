@@ -26,7 +26,8 @@ exports.postIndex = (req, res, next) => {
 
 exports.getUpdatePage = (req, res, next) => {
 	const posId = req.params.postId;
-	Post.findByPk(posId).then(post => {
+	Post.findByPk(posId)
+	.then(post => {
 		if (!post) {
 			return res.redirect('/');
 		}
